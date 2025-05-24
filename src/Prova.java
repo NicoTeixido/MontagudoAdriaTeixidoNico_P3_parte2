@@ -51,5 +51,4 @@ public class Prova extends JFrame{
         });
     }
 
-
 }
