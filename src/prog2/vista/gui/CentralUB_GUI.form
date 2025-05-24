@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="prog2.vista.gui.CentralUB_GUI">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="12" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="434"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <scrollpane id="ccf78">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="7986a" class="javax.swing.JTextArea" binding="outputArea">
+            <constraints/>
+            <properties>
+              <editable value="false"/>
+              <text value="Area del output"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <hspacer id="3d6c0">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <vspacer id="b1712">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="b803b" class="javax.swing.JButton" binding="btnGestionarBarres">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Gestionar Barres de Control"/>
+        </properties>
+      </component>
+      <component id="6d9b7" class="javax.swing.JButton" binding="btnGestionarReactor">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Gestionar Reactor"/>
+        </properties>
+      </component>
+      <component id="ebcb8" class="javax.swing.JButton" binding="btnGestionarRefrigeracio">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Gestionar Refrigeració"/>
+        </properties>
+      </component>
+      <component id="c97c0" class="javax.swing.JButton" binding="btnMostrarEstat">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Mostrar Estat Central"/>
+        </properties>
+      </component>
+      <component id="88b09" class="javax.swing.JButton" binding="btnMostrarBitacola">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Mostrar Estat Btacola"/>
+        </properties>
+      </component>
+      <component id="14cf9" class="javax.swing.JButton" binding="btnGestionarIncidencies">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Gestionar Incidencies"/>
+        </properties>
+      </component>
+      <component id="4882e" class="javax.swing.JButton" binding="btnFinalitzarDia">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Finalitzar dia"/>
+        </properties>
+      </component>
+      <component id="23fb0" class="javax.swing.JButton" binding="btnGuardarDades">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Guardar Dades"/>
+        </properties>
+      </component>
+      <component id="9d54" class="javax.swing.JButton" binding="btnCarregarDades">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Carregar Dades"/>
+        </properties>
+      </component>
+      <component id="d22ff" class="javax.swing.JButton" binding="btnSortir">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Sortir"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

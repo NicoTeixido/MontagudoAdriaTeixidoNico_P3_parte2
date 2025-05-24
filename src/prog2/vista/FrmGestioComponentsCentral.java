@@ -1,4 +1,4 @@
-package prog2.vista;
+/*package prog2.vista;
 
 import prog2.adaptador.Adaptador;
 import prog2.model.Dades;
@@ -63,7 +63,7 @@ public class FrmGestioComponentsCentral extends JFrame {
 
     /**
      * Inicializa y organiza todos los componentes visuales de la GUI.
-     */
+     *//*
     private void initComponents() {
         // --- PANEL SUPERIOR: Información General ---
         JPanel pnlInfoGeneral = new JPanel(new FlowLayout(FlowLayout.LEFT, 15, 5)); // Alinear a la izquierda, espacios
@@ -179,12 +179,12 @@ public class FrmGestioComponentsCentral extends JFrame {
         add(pnlDerecho, BorderLayout.EAST); // Panel derecho a la derecha
 
         // Inicializar las bombas una vez que el panel esté listo
-        initBombasRefrigeracion();
+        intBombasRefrigeracion();
     }
-
+*/
     /**
      * Añade los ActionListeners a los componentes interactivos.
-     */
+     *//*
     private void addListeners() {
         // Listener para el slider de barras (actualiza la etiqueta en tiempo real)
         sliderBarras.addChangeListener(e -> {
@@ -301,11 +301,11 @@ public class FrmGestioComponentsCentral extends JFrame {
             }
         });
     }
-
+*/
     /**
      * Inicializa los controles individuales para cada bomba de refrigeración.
      * Este método se llama una vez al inicio y populate el pnlBombasRefrigeracion.
-     */
+     *//*
     private void initBombasRefrigeracion() {
         pnlBombasRefrigeracion.removeAll(); // Limpiar por si acaso
         // Obtener la lista de IDs de las bombas desde el adaptador
@@ -345,11 +345,11 @@ public class FrmGestioComponentsCentral extends JFrame {
         pnlBombasRefrigeracion.repaint();
     }
 
-
+*/
     /**
      * Método para actualizar todos los campos de la GUI con los datos del modelo.
      * Se debería llamar después de cada acción que cambie el estado del modelo.
-     */
+     *//*
     private void updateGUI() {
         // Actualizar información general
         lblDiaActual.setText("Dia Actual: " + adaptador.getDiaActual());
@@ -368,7 +368,7 @@ public class FrmGestioComponentsCentral extends JFrame {
         java.util.List<Boolean> estadosBombas = adaptador.getEstadosBombes();
         java.util.List<Boolean> servicioBombas = adaptador.getServicioBombes();
 
-        for (int i = 0; i < pnlBombasRefrigeracion.g etComponentCount(); i++) {
+        for (int i = 0; i < pnlBombasRefrigeracion.getComponentCount(); i++) {
             JPanel pnlBomba = (JPanel) pnlBombasRefrigeracion.getComponent(i);
             JCheckBox chkActiva = (JCheckBox) pnlBomba.getComponent(1); // El JCheckBox es el segundo componente
             JLabel lblEstadoServicio = (JLabel) pnlBomba.getComponent(2); // El JLabel es el tercer componente
@@ -395,4 +395,4 @@ public class FrmGestioComponentsCentral extends JFrame {
         // Asegurarse de que la GUI se ejecute en el Event Dispatch Thread (EDT)
         SwingUtilities.invokeLater(FrmGestioComponentsCentral::new);
     }
-}
+}*/

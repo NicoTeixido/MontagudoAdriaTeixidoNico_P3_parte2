@@ -3,7 +3,7 @@ package prog2.adaptador;
 import prog2.model.*;
 import prog2.vista.CentralUBException;
 import java.io.*;
-import java.util.List; // Added for the new method
+import java.util.List;
 
 public class Adaptador {
     private Dades _dades;
@@ -106,8 +106,6 @@ public class Adaptador {
     // Gestio del Dia
     public void finalitzaDia(float demandaPotencia) throws CentralUBException {
         try {
-            // The finalitzaDia in Dades now returns the updated Bitacola instance
-            // but we don't need to capture it here since _dades already holds the reference.
             _dades.finalitzaDia(demandaPotencia);
         } catch (CentralUBException e) {
             throw new CentralUBException("Error al finalitzar el dia: " + e.getMessage());
@@ -118,7 +116,9 @@ public class Adaptador {
         return _dades.mostraEstat().toString();
     }
 
-    // Metodes addicionals
+    /* **********************
+     * Metodes addicionals *
+     *********************** */
     public float getPotenciaGenerada() {
         return _dades.calculaPotencia();
     }
@@ -133,6 +133,15 @@ public class Adaptador {
         } catch (CentralUBException e) {
             throw new CentralUBException("Error en les barres de control: " + e.getMessage());
         }
+    }
+
+    /**
+     * Obtiene el grado actual de inserción de las barras de control.
+     * @return El grado de inserción de las barras (valor entre 0.0 y 1.0).
+     */
+    public float getGrauInsercioBarres() {
+        // CORREGIDO: Llama a getInsercioBarres() que ya existe en Dades
+        return _dades.getInsercioBarres();
     }
 
     /**
