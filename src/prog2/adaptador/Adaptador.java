@@ -80,9 +80,19 @@ public class Adaptador {
         _dades.desactivaSistemaRefrigeracio(); // Assuming Dades will have this method
     }
 
+    // ESTE ES EL MÉTODO QUE FALTABA Y CAUSABA EL ERROR
+    /**
+     * Obtiene el sistema de refrigeración completo del modelo de datos.
+     * @return El objeto SistemaRefrigeracio.
+     */
+    public SistemaRefrigeracio mostraSistemaRefrigeracio() {
+        return _dades.mostraSistemaRefrigeracio();
+    }
+
     public String getEstatSistemaRefrigeracio() {
         return _dades.mostraSistemaRefrigeracio().toString();
     }
+
 
     // Bitacola i Informes
 

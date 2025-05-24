@@ -123,19 +123,14 @@ public class CentralUB_GUI extends JFrame {
         btnGestionarRefrigeracio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                outputArea.append("\n[Acció] Gestionar Refrigeració (PENDENT d'implementar finestra)...");
-                // TODO: Aquí se abrirá una nueva ventana/JDialog para activaBomba/desactivaBomba
-                // Ejemplo de cómo usar:
-                /*
-                try {
-                    // Preguntar si activar/desactivar y qué bomba o todas
-                    adaptador.activaBomba(1); // o adaptador.activaTotesBombesRefrigeracio();
-                    outputArea.append("\nEstat del Sistema de Refrigeració: " + adaptador.getEstatSistemaRefrigeracio() + "\n");
-                } catch (CentralUBException ex) {
-                    outputArea.append("ERROR: " + ex.getMessage() + "\n");
-                    JOptionPane.showMessageDialog(mainPanel, ex.getMessage(), "Error Refrigeració", JOptionPane.ERROR_MESSAGE);
+                GestionarRefrigeracioDialog dialog = new GestionarRefrigeracioDialog(CentralUB_GUI.this, adaptador, outputArea);
+                dialog.setVisible(true); // Mostrar el diálogo y esperar a que se cierre
+
+                if (dialog.isCanviAcceptat()) {
+                    outputArea.append("\nGestió del sistema de refrigeració processada amb èxit.\n");
+                } else {
+                    outputArea.append("\nGestió del sistema de refrigeració cancel·lada o sense canvis.\n");
                 }
-                */
             }
         });
 
