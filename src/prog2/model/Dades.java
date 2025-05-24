@@ -64,6 +64,10 @@ public class Dades implements InDades, Serializable {
         this.insercioBarres = grau;
     }
 
+    public int getDia() {
+        return this.dia;
+    }
+
     @Override
     public void activaReactor() throws CentralUBException {
         if (this.reactor.getTemperatura() > Reactor.TEMP_MAXIMA) {

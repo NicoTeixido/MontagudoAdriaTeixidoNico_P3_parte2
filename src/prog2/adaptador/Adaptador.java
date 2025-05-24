@@ -80,7 +80,6 @@ public class Adaptador {
         _dades.desactivaSistemaRefrigeracio(); // Assuming Dades will have this method
     }
 
-
     public String getEstatSistemaRefrigeracio() {
         return _dades.mostraSistemaRefrigeracio().toString();
     }
@@ -134,5 +133,13 @@ public class Adaptador {
         } catch (CentralUBException e) {
             throw new CentralUBException("Error en les barres de control: " + e.getMessage());
         }
+    }
+
+    /**
+     * Obtiene el día actual del modelo de datos.
+     * @return El número del día actual.
+     */
+    public int getDiaActual() {
+        return _dades.getDia();
     }
 }
