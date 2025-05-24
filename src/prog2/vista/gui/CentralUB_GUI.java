@@ -102,19 +102,21 @@ public class CentralUB_GUI extends JFrame {
         btnGestionarReactor.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                outputArea.append("\n[Acció] Gestionar Reactor (PENDENT d'implementar finestra)...");
-                // TODO: Aquí se abrirá una nueva ventana/JDialog para activaReactor/desactivaReactor
-                // Ejemplo de cómo usar activaReactor/desactivaReactor:
-                /*
-                try {
-                    // Aquí podrías preguntar si activar o desactivar
-                    adaptador.activaReactor(); // o adaptador.desactivaReactor();
-                    outputArea.append("\nEstat del Reactor: " + adaptador.getEstatReactor() + "\n");
-                } catch (CentralUBException ex) {
-                    outputArea.append("ERROR: " + ex.getMessage() + "\n");
-                    JOptionPane.showMessageDialog(mainPanel, ex.getMessage(), "Error Reactor", JOptionPane.ERROR_MESSAGE);
+                // Crear e inicializar el diálogo para gestionar el reactor
+                GestionarReactorDialog dialog = new GestionarReactorDialog(CentralUB_GUI.this, adaptador, outputArea);
+                dialog.setVisible(true); // Mostrar el diálogo y esperar a que se cierre
+
+                // Una vez que el diálogo se cierra
+                if (dialog.isCanviAcceptat()) {
+                    // Si el cambio fue aceptado, el diálogo ya habrá manejado la lógica
+                    // y actualizado el outputArea principal.
+                    outputArea.append("\nGestió del reactor processada amb èxit.\n");
+                } else {
+                    // Si el usuario canceló el diálogo o hubo un error manejado internamente
+                    outputArea.append("\nGestió del reactor cancel·lada o sense canvis.\n");
                 }
-                */
+                // Opcional: Volver a mostrar el estado actual completo después de la acción
+                // outputArea.append(adaptador.getEstatActual() + "\n");
             }
         });
 
