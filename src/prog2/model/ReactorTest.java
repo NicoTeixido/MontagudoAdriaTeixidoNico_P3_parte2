@@ -13,7 +13,6 @@ public class ReactorTest {
         reactor.activa();
         reactor.setTemperatura(500);
 
-        // 50% de inserción = 500 + (100-50)*10 = 1000
         assertEquals(1000.0f, reactor.calculaOutput(50), 0.001);
     }
 
@@ -25,6 +24,9 @@ public class ReactorTest {
         reactor.setTemperatura(1001);
         reactor.revisa(pagina);
 
-        assertTrue(pagina.toString().contains("Reactor desactivat per superar 1000.0°C"));
+        assertTrue(pagina.toString().contains("Reactor desactivat per superar " + Reactor.TEMP_MAXIMA + "C (temperatura: " + reactor.getTemperatura() + "C)"));
+
+
+        assertFalse(reactor.getActivat());
     }
 }

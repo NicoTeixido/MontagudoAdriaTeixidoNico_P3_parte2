@@ -10,7 +10,7 @@ public class GeneradorVaporTest {
         GeneradorVapor generador = new GeneradorVapor();
 
         // Prueba con temperatura válida
-        assertEquals(452.5f, generador.calculaOutput(500), 0.001); // (500-25)*0.9 +25
+        assertEquals(452.5f, generador.calculaOutput(500), 0.001);
 
         // Prueba con temperatura igual a ambiente
         assertEquals(25.0f, generador.calculaOutput(25), 0.001);

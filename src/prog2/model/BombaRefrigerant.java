@@ -8,8 +8,8 @@ public class BombaRefrigerant implements InBombaRefrigerant, Serializable {
     private boolean _activat;
     private boolean _foraDeServei;
     private final VariableUniforme _generadorAleatori;
-    private static final float CAPACITAT = 100.0f; // Capacitat fixa (graus)
-    private static final float COST_OPERATIU = 130.0f; // Cost per bomba (Taula 1)
+    private static final float CAPACITAT = 100.0f; // Capacitat fixa
+    private static final float COST_OPERATIU = 130.0f; // Cost per bomba
 
     // Constructor
     public BombaRefrigerant(int id, VariableUniforme generadorAleatori) {
@@ -19,7 +19,7 @@ public class BombaRefrigerant implements InBombaRefrigerant, Serializable {
         this._generadorAleatori = generadorAleatori;
     }
 
-    // --- Implementacio de InBombaRefrigerant ---
+    // Implementacio de InBombaRefrigerant
     @Override
     public int getId() {
         return _id;
@@ -45,8 +45,6 @@ public class BombaRefrigerant implements InBombaRefrigerant, Serializable {
 
     @Override
     public void revisa(PaginaIncidencies p) {
-        // FIXED: Changed random check for 25% probability.
-        // seguentValor() returns an int (0-99), so compare it to an int (0-24 for 25%).
         if (_generadorAleatori.seguentValor() < 25) { // 25% probabilitat
             _foraDeServei = true;
             _activat = false; // Es desactiva automaticament
@@ -69,7 +67,7 @@ public class BombaRefrigerant implements InBombaRefrigerant, Serializable {
         return (_activat && !_foraDeServei) ? COST_OPERATIU : 0.0f;
     }
 
-    // --- Metodes addicionals ---
+    // Metodes toString
     @Override
     public String toString() {
         return String.format("Bomba %d [Activa: %b, Fora de servei: %b]",

@@ -13,9 +13,7 @@ public class Adaptador {
         this._dades = new Dades();
     }
 
-    /* **********************
-     * METODES DE PERSISTENCIA *
-     *********************** */
+    //METODES DE PERSISTENCIA:
     public void guardaDades(String camiDesti) throws CentralUBException {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(camiDesti))) {
             oos.writeObject(_dades);
@@ -32,9 +30,7 @@ public class Adaptador {
         }
     }
 
-    /* **********************
-     * METODES DE GESTIO *
-     *********************** */
+    // METODES DE GESTIO:
 
     // Reactor
     public void activaReactor() throws CentralUBException {
@@ -66,7 +62,7 @@ public class Adaptador {
         _dades.desactivaBomba(idBomba);
     }
 
-    // NEW: Method to activate all pumps in the refrigeration system
+    // Activar totes les bombes
     public void activaTotesBombesRefrigeracio() throws CentralUBException {
         try {
             _dades.activaSistemaRefrigeracio(); // Assuming Dades will have this method
@@ -75,16 +71,12 @@ public class Adaptador {
         }
     }
 
-    // NEW: Method to deactivate all pumps in the refrigeration system
+    // Desctivar totes les bombes
     public void desactivaTotesBombesRefrigeracio() {
         _dades.desactivaSistemaRefrigeracio(); // Assuming Dades will have this method
     }
 
-    // ESTE ES EL MÉTODO QUE FALTABA Y CAUSABA EL ERROR
-    /**
-     * Obtiene el sistema de refrigeración completo del modelo de datos.
-     * @return El objeto SistemaRefrigeracio.
-     */
+
     public SistemaRefrigeracio mostraSistemaRefrigeracio() {
         return _dades.mostraSistemaRefrigeracio();
     }
@@ -94,8 +86,7 @@ public class Adaptador {
     }
 
 
-    // Bitacola i Informes
-
+    // Bitacola i Informes:
     public String getBitacolaCompleta() {
         return _dades.mostraBitacola().toString();
     }
@@ -113,7 +104,7 @@ public class Adaptador {
         return sb.toString().trim();
     }
 
-    // Gestio del Dia
+    // Gestio del Dia:
     public void finalitzaDia(float demandaPotencia) throws CentralUBException {
         try {
             _dades.finalitzaDia(demandaPotencia);
@@ -126,9 +117,7 @@ public class Adaptador {
         return _dades.mostraEstat().toString();
     }
 
-    /* **********************
-     * Metodes addicionals *
-     *********************** */
+    //Altres metodes:
     public float getPotenciaGenerada() {
         return _dades.calculaPotencia();
     }
@@ -145,20 +134,21 @@ public class Adaptador {
         }
     }
 
-    /**
-     * Obtiene el grado actual de inserción de las barras de control.
-     * @return El grado de inserción de las barras (valor entre 0.0 y 1.0).
-     */
+
     public float getGrauInsercioBarres() {
-        // CORREGIDO: Llama a getInsercioBarres() que ya existe en Dades
         return _dades.getInsercioBarres();
     }
 
-    /**
-     * Obtiene el día actual del modelo de datos.
-     * @return El número del día actual.
-     */
+
     public int getDiaActual() {
         return _dades.getDia();
+    }
+
+    /**
+     * Obtiene una demanda de potencia eléctrica diaria generada por el modelo.
+     * @return La demanda de potencia generada.
+     */
+    public float getDemandaPotenciaDiaria() {
+        return _dades.generaDemandaPotenciaDiaria();
     }
 }

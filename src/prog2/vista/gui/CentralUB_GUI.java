@@ -96,7 +96,7 @@ public class CentralUB_GUI extends JFrame {
                 } else {
                     outputArea.append("\nGestió de barres cancel·lada.\n");
                 }
-               }
+            }
         });
 
         btnGestionarReactor.addActionListener(new ActionListener() {
@@ -163,23 +163,18 @@ public class CentralUB_GUI extends JFrame {
         btnFinalitzarDia.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Solicitar la demanda de potencia al usuario, ya que finalitzaDia la requiere
-                String demandaStr = JOptionPane.showInputDialog(mainPanel, "Introdueix la demanda de potència pel dia (número decimal):");
-                if (demandaStr == null) { // Usuario canceló
-                    outputArea.append("\nFinalització del dia cancel·lada.\n");
-                    return;
-                }
+                // *** CAMBIO AQUÍ: La demanda de potencia se genera automáticamente ***
+                float demanda = adaptador.getDemandaPotenciaDiaria(); // Obtenemos la demanda generada
 
                 try {
-                    float demanda = Float.parseFloat(demandaStr);
-                    outputArea.append("\n[Acció] Finalitzant el dia actual amb demanda: " + demanda + "...\n");
+                    outputArea.append("\n[Acció] Finalitzant el dia actual.\n");
+                    // Mostrar la demanda generada al usuario, con formato similar al ejemplo original
+                    outputArea.append("La demanda de potencia electrica avui es de " + String.format("%.2f", demanda) + " unitats.\n");
+
                     adaptador.finalitzaDia(demanda); // Llamada correcta con el parámetro
                     outputArea.append("Dia finalitzat amb èxit.\n");
                     outputArea.append("Nou estat: " + adaptador.getEstatActual() + "\n");
                     outputArea.append("Nou dia actual: " + adaptador.getDiaActual() + "\n");
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(mainPanel, "Demanda de potència invàlida. Si us plau, introdueix un número decimal.", "Error d'entrada", JOptionPane.ERROR_MESSAGE);
-                    outputArea.append("ERROR: Demanda de potència invàlida: " + ex.getMessage() + "\n");
                 } catch (CentralUBException ex) {
                     outputArea.append("ERROR al finalitzar el dia: " + ex.getMessage() + "\n");
                     JOptionPane.showMessageDialog(mainPanel, ex.getMessage(), "Error al finalitzar dia", JOptionPane.ERROR_MESSAGE);

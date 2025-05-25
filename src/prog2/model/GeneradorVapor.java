@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 public class GeneradorVapor implements InComponent, Serializable {
     private boolean _activat;
-    private static final float COST_OPERATIU = 25.0f; // Taula 1
+    private static final float COST_OPERATIU = 25.0f;
     private static final float EFICIENCIA = 0.9f;     // 90% d'eficiència
     private static final float TEMP_AMBIENT = 25.0f;
 
     public GeneradorVapor() {
-        this._activat = true; // Sempre activat (Taula 1)
+        this._activat = true;
     }
 
     // Implementació de InComponent
@@ -25,12 +25,12 @@ public class GeneradorVapor implements InComponent, Serializable {
     @Override
     public float calculaOutput(float input) {
         if (!_activat) return 0.0f;
-        return (input - TEMP_AMBIENT) * EFICIENCIA + TEMP_AMBIENT; // Output = (Input - 25) * 0.9 + 25
+        return (input - TEMP_AMBIENT) * EFICIENCIA + TEMP_AMBIENT;
     }
 
     @Override
     public void revisa(PaginaIncidencies p) {
-        // No té incidències (Taula 1)
+
     }
 
     @Override

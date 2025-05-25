@@ -1,13 +1,13 @@
 package prog2.model;
 
 import java.io.Serializable;
-import prog2.vista.CentralUBException; // Keep this import as revisa can throw it
+import prog2.vista.CentralUBException;
 
 public class Reactor implements InComponent, Serializable {
     private boolean _activat;
-    private float _temperatura; // En C
-    private static final float COST_OPERATIU = 35.0f; // Taula 1
-    static final float TEMP_MAXIMA = 1000.0f; // Taula 1
+    private float _temperatura;
+    private static final float COST_OPERATIU = 35.0f;
+    static final float TEMP_MAXIMA = 1000.0f;
 
     public Reactor() {
         this._activat = false; // Inicialment desactivat
@@ -35,7 +35,7 @@ public class Reactor implements InComponent, Serializable {
     @Override
     public float calculaOutput(float grauInsercioBarres) {
         if (!_activat) {
-            return _temperatura; // Devuelve la temperatura actual si no esta activado
+            return _temperatura;
         } else {
              return _temperatura + (100.0f - grauInsercioBarres) * 10.0f;
         }

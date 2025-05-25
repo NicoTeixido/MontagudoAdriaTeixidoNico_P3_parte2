@@ -1,4 +1,4 @@
-package prog2.vista;
+/*package prog2.vista;
 
 import prog2.adaptador.Adaptador;
 import prog2.vista.VariableNormal;
@@ -38,7 +38,7 @@ public class AppCentralUB extends JFrame {
     /**
      * Constructor de la clase AppCentralUB.
      * Configura la ventana principal de la aplicación.
-     */
+     *//*
     public AppCentralUB() {
         // Inicializar el Adaptador y las variables de simulación
         adaptador = new Adaptador();
@@ -64,7 +64,7 @@ public class AppCentralUB extends JFrame {
     /**
      * Genera la demanda de potencia utilizando la VariableNormal.
      * Se asegura de que esté dentro de los límites DEMANDA_MIN y DEMANDA_MAX.
-     */
+     *//*
     private float generarDemandaPotencia() {
         float demanda = variableNormal.seguentValor();
         return Math.max(DEMANDA_MIN, Math.min(DEMANDA_MAX, demanda));
@@ -72,7 +72,7 @@ public class AppCentralUB extends JFrame {
 
     /**
      * Configura la barra de menú de la aplicación.
-     */
+     *//*
     private void configurarMenuBar() {
         menuBar = new JMenuBar();
         JMenu menuArchivo = new JMenu("Archivo");
@@ -112,7 +112,7 @@ public class AppCentralUB extends JFrame {
 
     /**
      * Configura el panel principal con los botones de funcionalidad.
-     */
+     *//*
     private void configurarPanelPrincipal() {
         mainPanel = new JPanel(new GridBagLayout()); // Usamos GridBagLayout para un diseño más flexible y centrado
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Margen alrededor
@@ -197,7 +197,7 @@ public class AppCentralUB extends JFrame {
 
     /**
      * Actualiza la información mostrada en la ventana principal.
-     */
+     *//*
     private void actualizarInformacionCentral() {
         lblDiaActual.setText("Día Actual: " + adaptador.getDiaActual());
         lblDemandaPotencia.setText("Demanda de Potencia (hoy): " + String.format("%.2f", demandaPotenciaDiaActual) + " MW");
@@ -207,7 +207,7 @@ public class AppCentralUB extends JFrame {
 
     /**
      * Lógica para finalizar el día.
-     */
+     *//*
     private void finalizarDia() {
         try {
             // El adaptador ya maneja la lógica de actualizar la bitácora y todo lo demás
@@ -227,7 +227,7 @@ public class AppCentralUB extends JFrame {
 
     /**
      * Lógica para guardar datos de la central.
-     */
+     *//*
     private void guardarDatos() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Guardar datos de la central");
@@ -246,7 +246,7 @@ public class AppCentralUB extends JFrame {
 
     /**
      * Lógica para cargar datos de la central.
-     */
+     *//*
     private void cargarDatos() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Cargar datos de la central");
@@ -270,9 +270,9 @@ public class AppCentralUB extends JFrame {
     }
 
     /**
-     * Método main para iniciar la aplicación GUI.
+     * Metodo main para iniciar la aplicación GUI.
      * @param args argumentos de la línea de comandos
-     */
+     *//*
     public static void main(String[] args) {
         // Ejecutar la GUI en el Event Dispatch Thread (EDT)
         SwingUtilities.invokeLater(new Runnable() {
@@ -282,4 +282,4 @@ public class AppCentralUB extends JFrame {
             }
         });
     }
-}
+}*/

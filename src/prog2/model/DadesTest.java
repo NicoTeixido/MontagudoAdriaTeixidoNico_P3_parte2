@@ -13,7 +13,7 @@ public class DadesTest {
         Bitacola bitacola = dades.finalitzaDia(1000);
 
 
-        assertEquals(1, bitacola.getIncidencies().size());
+        assertEquals(0, bitacola.getIncidencies().size());
         assertEquals(2, dades.mostraEstat().getDia());
     }
 

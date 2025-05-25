@@ -18,7 +18,7 @@ public class SistemaRefrigeracioTest {
             sistema.afegirBomba(bomba);
         }
 
-        // 4 bombas * 100 = 400 capacidad máxima
+
         assertEquals(400.0f, sistema.calculaOutput(500), 0.001);
     }
 

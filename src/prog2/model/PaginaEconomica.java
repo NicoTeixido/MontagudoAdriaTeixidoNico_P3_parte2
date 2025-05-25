@@ -26,7 +26,7 @@ public class PaginaEconomica extends PaginaBitacola implements Serializable {
         this._guanysAcumulats = guanysAcumulats;
     }
 
-    // Override de toString() según enunciado
+    // Override de toString()
     @Override
     public String toString() {
         return "# Pàgina Econòmica\n" +

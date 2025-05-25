@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class Turbina implements InComponent, Serializable {
     private boolean _activat;
-    private static final float COST_OPERATIU = 20.0f; // Taula 1
-    private static final float TEMP_MINIMA = 100.0f;  // Temperatura de vaporització
+    private static final float COST_OPERATIU = 20.0f;
+    private static final float TEMP_MINIMA = 100.0f;
 
     public Turbina() {
-        this._activat = true; // Sempre activada (Taula 1)
+        this._activat = true;
     }
 
     // Implementació de InComponent
@@ -24,12 +24,12 @@ public class Turbina implements InComponent, Serializable {
     @Override
     public float calculaOutput(float input) {
         if (!_activat || input < TEMP_MINIMA) return 0.0f;
-        return input * 2.0f; // Conversió simplificada: 1°C = 2 unitats de potència
+        return input * 2.0f;
     }
 
     @Override
     public void revisa(PaginaIncidencies p) {
-        // No té incidències (Taula 1)
+
     }
 
     @Override

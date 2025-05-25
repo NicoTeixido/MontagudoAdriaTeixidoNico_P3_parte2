@@ -9,10 +9,10 @@ public class TurbinaTest {
     public void testCalculaOutput() {
         Turbina turbina = new Turbina();
 
-        // Temperatura sobre el mínimo
+
         assertEquals(200.0f, turbina.calculaOutput(100), 0.001);
 
-        // Temperatura bajo el mínimo
+
         assertEquals(0.0f, turbina.calculaOutput(99), 0.001);
     }
 

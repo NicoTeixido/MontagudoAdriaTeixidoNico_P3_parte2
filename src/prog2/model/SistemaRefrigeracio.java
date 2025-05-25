@@ -20,7 +20,7 @@ public class SistemaRefrigeracio implements InComponent, Serializable {
         _bombes.add(bomba);
     }
 
-    // Getter per a la llista de bombes (necessari per a Dades)
+    // Getter per a la llista de bombes
     public List<BombaRefrigerant> getBombes() {
         return _bombes;
     }

@@ -35,7 +35,7 @@ public class CentralUB {
         variableNormal = new VariableNormal(VAR_NORM_MEAN, VAR_NORM_STD, VAR_NORM_SEED);
         demandaPotencia = generaDemandaPotencia();
         adaptador = new Adaptador();
-        // Afegir codi adicional si fos necessari:
+
 
     }
 
@@ -51,7 +51,7 @@ public class CentralUB {
         while (!sortir) {
             menuPrincipal.mostrarMenu();
             OpcioMenuPrincipal opcio = menuPrincipal.getOpcio(scanner);
-
+            //MENU:
             switch (opcio) {
                 case GESTIO_BARRES:
                     gestioBarresControl(scanner);
@@ -80,7 +80,7 @@ public class CentralUB {
                 case GUARDAR_DADES:
                     try {
                         guardarDades();
-                        System.out.println("Dades guardades correctament.\n"); // Moved success message
+                        System.out.println("Dades guardades correctament.\n");
                     } catch (CentralUBException e) {
                         System.err.println("Error al guardar les dades: " + e.getMessage()); // Print error
                     }
@@ -88,7 +88,7 @@ public class CentralUB {
                 case CARREGAR_DADES:
                     try {
                         carregarDades();
-                        System.out.println("Dades carregades correctament.\n"); // Moved success message
+                        System.out.println("Dades carregades correctament.\n");
                     } catch (CentralUBException e) {
                         System.err.println("Error al carregar les dades: " + e.getMessage()); // Print error
                     }
@@ -126,7 +126,7 @@ public class CentralUB {
         adaptador.guardaDades("central_ub_dades.dat");
     }
 
-    private void carregarDades() throws CentralUBException { // Propagate exception to be caught in gestioCentralUB
+    private void carregarDades() throws CentralUBException {
         adaptador.carregaDades("central_ub_dades.dat");
     }
 
@@ -135,7 +135,7 @@ public class CentralUB {
         System.out.print("Introdueix el nou grau d'insercio (0-100%): ");
         if (scanner.hasNextFloat()) {
             float grau = scanner.nextFloat();
-            scanner.nextLine(); // Consumir la nova linia
+            scanner.nextLine();
             try {
                 adaptador.setInsercioBarres(grau);
                 System.out.println("Grau d'insercio establert a " + grau + "%");
@@ -144,7 +144,7 @@ public class CentralUB {
             }
         } else {
             System.out.println("Entrada no valida.");
-            scanner.nextLine(); // Consumir la linia incorrecta
+            scanner.nextLine();
         }
     }
 
@@ -184,14 +184,14 @@ public class CentralUB {
         switch (opcioRefrigeracio) {
             case ACTIVAR_TOTES:
                 try {
-                    adaptador.activaTotesBombesRefrigeracio(); // FIXED: Calls new correct method
+                    adaptador.activaTotesBombesRefrigeracio();
                     System.out.println("Totes les bombes activades.");
                 } catch (CentralUBException e) {
                     System.err.println(e.getMessage());
                 }
                 break;
             case DESACTIVAR_TOTES:
-                adaptador.desactivaTotesBombesRefrigeracio(); // FIXED: Calls new correct method
+                adaptador.desactivaTotesBombesRefrigeracio();
                 System.out.println("Totes les bombes desactivades.");
                 break;
             case ACTIVAR_BOMBA:
@@ -244,7 +244,6 @@ public class CentralUB {
 
     private void mostrarIncidencies() {
         System.out.println("\n--- Llista d'Incidencies ---");
-        // FIXED: adaptor.getIncidencies() now returns a formatted string.
         System.out.println(adaptador.getIncidencies());
     }
 
